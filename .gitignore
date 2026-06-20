@@ -1,0 +1,25 @@
+# Виртуальное окружение
+.venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Системные файлы
+Desktop.ini
+Thumbs.db
+
+# Кэш Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Allure
+allure-results/
+allure-report/
+
+# Логи
+*.log
+
+# Git
+.DS_Store
