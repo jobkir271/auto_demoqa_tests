@@ -1,3 +1,6 @@
 "BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
-"0","demoqa_tests","0","practic_form","4","0","Filling out the form","0"
+"0","demoqa_tests","0","alert,confirm,prompt","1","0","Catching alerts delay 5 seconds","0"
+"0","demoqa_tests","0","alert,confirm,prompt","6","0","Catching confirm","0"
 "0","demoqa_tests","0","login","1","0","login test","0"
+"0","demoqa_tests","0","practic_form","4","0","Filling out the form","0"
+"0","demoqa_tests","0","alert,confirm,prompt","1","0","Catching alerts","0"
