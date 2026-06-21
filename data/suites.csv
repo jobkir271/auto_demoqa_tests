@@ -1,2 +1,6 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","1889","test_login[chromium]","tests","2026-06-20","passed","2026-06-20","","test_login","",""
+"","6617","test_practic_form[chromium-\u0410\u043d\u0434\u0440\u0435\u0439-\u0412\u0430\u0440\u0430\u043f\u0430\u0435\u0432-hel@yandex.ru-122231113213-20 Jun 2125-E-number_hobby1-\u0433.\u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b.\u041a\u0440\u0430\u0441\u043d\u044b\u0439, \u0434.11-Haryana-Karnal-True]","tests","2026-06-21","passed","2026-06-21","","test_practic_form","",""
+"","1027","test_login[chromium]","tests","2026-06-21","passed","2026-06-21","","test_login","",""
+"","7201","test_practic_form[chromium-Andrey-Vararpaev-hello22@gmial.com-8999555555-06 Jun 1901-Maths-number_hobby0-235 Station Road, Aberystwyth, NP23 5ET, Wales-NCR-Noida-True]","tests","2026-06-21","passed","2026-06-21","","test_practic_form","",""
+"","6688","test_practic_form[chromium-\u041e\u041e\u041e-\u041e\u041e\u041e-HHH@yandex.ru-0000000000000000-01 Jun 1800-E-number_hobby2-\u041e\u041e\u041e-Uttar Pradesh-Lucknow-True]","tests","2026-06-21","passed","2026-06-21","","test_practic_form","",""
+"","6617","test_practic_form[chromium-\u041e\u041e\u041e-\u041e\u041e\u041e-HHH@\u044f\u043d\u0434\u0435\u043a\u0441.\u0440\u0443-+79236525587-03 Jun 2025-E-number_hobby3-\u041e\u041e\u041e-Uttar Pradesh-Lucknow-False]","tests","2026-06-21","passed","2026-06-21","","test_practic_form","",""
