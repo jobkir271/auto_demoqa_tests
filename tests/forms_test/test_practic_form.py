@@ -1,7 +1,7 @@
 import pytest
 import allure
 from playwright.sync_api import Page,expect
-from pages.practice_form_page import PracticeFormPage
+from pages.forms.practice_form_page import PracticeFormPage
 from pages.forms_page import FormsPage
 from pages.main_page import MainPage
 

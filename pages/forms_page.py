@@ -4,3 +4,6 @@ class FormsPage(BasePage):
     def click_practice_form(self):
         self.page.get_by_role('link', name="Practice Form").click()
 
+class AlertsFrameAndWindows(BasePage):
+    def click_alerts(self):
+        self.page.get_by_role('link', name="Alerts").click()
