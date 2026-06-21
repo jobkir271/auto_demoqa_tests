@@ -1,0 +1,1 @@
+https://jobkir271.github.io/auto_demoqa_tests/
