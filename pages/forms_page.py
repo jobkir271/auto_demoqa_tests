@@ -7,3 +7,5 @@ class FormsPage(BasePage):
 class AlertsFrameAndWindows(BasePage):
     def click_alerts(self):
         self.page.get_by_role('link', name="Alerts").click()
+    def click_browser_windows(self):
+        self.page.get_by_role('link', name="Browser Windows").click()

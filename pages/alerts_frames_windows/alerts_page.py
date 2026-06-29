@@ -1,4 +1,3 @@
-import pytest
 from pages.base_page import BasePage
 
 class AlertsPage(BasePage):
