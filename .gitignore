@@ -23,3 +23,6 @@ allure-report/
 
 # Git
 .DS_Store
+
+# traning_test
+tests/test_delick.py

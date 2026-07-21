@@ -9,3 +9,7 @@ class AlertsFrameAndWindows(BasePage):
         self.page.get_by_role('link', name="Alerts").click()
     def click_browser_windows(self):
         self.page.get_by_role('link', name="Browser Windows").click()
+
+class Elements(BasePage):
+    def click_text_box(self):
+        self.page.get_by_role('link', name="Text Box").click()
