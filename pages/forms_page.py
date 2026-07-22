@@ -13,3 +13,5 @@ class AlertsFrameAndWindows(BasePage):
 class Elements(BasePage):
     def click_text_box(self):
         self.page.get_by_role('link', name="Text Box").click()
+    def click_check_box(self):
+        self.page.get_by_role('link', name="Check Box").click()

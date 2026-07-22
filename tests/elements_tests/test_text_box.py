@@ -1,5 +1,6 @@
 import pytest
 import allure
+
 from pages.elements.text_box_page import TextBoxPage
 from pages.forms_page import Elements
 from pages.main_page import MainPage
@@ -22,7 +23,7 @@ from playwright.sync_api import Page,expect
 @allure.story("Filling out the form")
 @allure.severity(allure.severity_level.NORMAL)
 
-def test_text_box(page: Page,name,email,current_address,permanent_address,expected_success):
+def test_check_box(page: Page,name,email,current_address,permanent_address,expected_success):
     with allure.step("open url demoqa.com"):
         main = MainPage(page)
         main.open("https://demoqa.com/")
