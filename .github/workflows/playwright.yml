@@ -2,7 +2,8 @@ name: Playwright Tests
 
 permissions:
   contents: write
-
+  pages: write
+  id-token: write
 on: [push, pull_request]
 
 jobs:
