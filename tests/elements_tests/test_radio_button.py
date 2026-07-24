@@ -16,7 +16,7 @@ from playwright.sync_api import Page,expect
 
 @allure.epic("demoqa_tests")
 @allure.feature("radio_button")
-@allure.story("Filling in check boxes")
+@allure.story("Filling in radio button")
 @allure.severity(allure.severity_level.NORMAL)
 
 def test_radio_button(page: Page, text, radio_id ):
@@ -32,6 +32,6 @@ def test_radio_button(page: Page, text, radio_id ):
     with allure.step("checking that the No button is not displayed"):
         expect(page.locator("p.mt-3")).to_contain_text(f"You have selected {text}")
         expect(page.locator("#noRadio")).to_be_disabled()
-        #page.locator(radio_id).evaluate("el=>el.removeAttribute('disabled')")
+
 
 
