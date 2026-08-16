@@ -17,3 +17,5 @@ class Elements(BasePage):
         self.page.get_by_role('link', name="Check Box").click()
     def click_radio_button(self):
         self.page.get_by_role('link', name="Radio Button").click()
+    def click_buttons(self):
+        self.page.get_by_role('link', name="Buttons").click()
