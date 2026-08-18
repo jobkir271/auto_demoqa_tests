@@ -19,3 +19,5 @@ class Elements(BasePage):
         self.page.get_by_role('link', name="Radio Button").click()
     def click_buttons(self):
         self.page.get_by_role('link', name="Buttons").click()
+    def click_web_tables(self):
+        self.page.get_by_role('link', name = "Web Tables").click()
