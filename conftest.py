@@ -21,3 +21,11 @@ def test_web_tables(page):
     forms.click_web_tables()
     page.wait_for_selector("table tbody tr", state="visible")
     return page
+@pytest.fixture
+def test_links(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_elements()
+    form = Elements(page)
+    form.click_links()
+    return page
