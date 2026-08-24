@@ -23,3 +23,5 @@ class Elements(BasePage):
         self.page.get_by_role('link', name = "Web Tables").click()
     def click_links(self):
         self.page.get_by_role('link', name = "Links", exact=True).click()
+    def click_broken(self):
+        self.page.get_by_role('link', name = "Broken Links - Images").click()
