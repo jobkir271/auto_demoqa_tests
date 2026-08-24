@@ -48,3 +48,12 @@ def test_download_fix(page):
     form = Elements(page)
     form.click_download()
     return page
+
+@pytest.fixture
+def test_dynamic(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_elements()
+    form = Elements(page)
+    form.click_dynamic()
+    return page

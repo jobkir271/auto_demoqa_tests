@@ -4,8 +4,8 @@ from playwright.sync_api import expect, Page
 
 
 @allure.epic("demoqa_tests")
-@allure.feature("Upload and download")
-@allure.story("Checking upload and download")
+@allure.feature("Download")
+@allure.story("Checking download")
 @allure.severity(allure.severity_level.NORMAL)
 def test_download(test_download_fix: Page):
     with allure.step("Open upload and download page"):
@@ -16,7 +16,10 @@ def test_download(test_download_fix: Page):
             download = download_info.value
     with allure.step("Checking download file"):
         assert download.suggested_filename == "sampleFile.jpeg"
-
+@allure.epic("demoqa_tests")
+@allure.feature("Upload")
+@allure.story("Checking upload")
+@allure.severity(allure.severity_level.NORMAL)
 def test_upload(test_download_fix:Page):
     with allure.step("Open upload and download page"):
         page = test_download_fix

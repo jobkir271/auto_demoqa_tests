@@ -4,7 +4,7 @@ from playwright.sync_api import expect
 
 @allure.epic("demoqa_tests")
 @allure.feature("Broken Links - Images")
-@allure.story("Checking img and links")
+@allure.story("Checking img")
 @allure.severity(allure.severity_level.NORMAL)
 def test_broken_image(test_broken):
     with allure.step("Open broken page"):
@@ -20,6 +20,10 @@ def test_broken_image(test_broken):
 
     assert broken_width == 0,f"Ожидалась ширина 0, получено {broken_width}"
 
+@allure.epic("demoqa_tests")
+@allure.feature("Broken Links - Images")
+@allure.story("Checking links")
+@allure.severity(allure.severity_level.NORMAL)
 def test_broken_links(test_broken):
     with allure.step("Open broken page"):
         page = test_broken
