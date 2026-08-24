@@ -29,6 +29,8 @@ def test_links(page):
     form = Elements(page)
     form.click_links()
     return page
+
+
 @pytest.fixture
 def test_broken(page):
     main = MainPage(page)
@@ -36,4 +38,13 @@ def test_broken(page):
     main.click_elements()
     form = Elements(page)
     form.click_broken()
+    return page
+
+@pytest.fixture
+def test_download_fix(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_elements()
+    form = Elements(page)
+    form.click_download()
     return page

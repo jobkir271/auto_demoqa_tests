@@ -25,3 +25,5 @@ class Elements(BasePage):
         self.page.get_by_role('link', name = "Links", exact=True).click()
     def click_broken(self):
         self.page.get_by_role('link', name = "Broken Links - Images").click()
+    def click_download(self):
+        self.page.get_by_role('link', name = "Upload and Download").click()
