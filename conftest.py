@@ -78,3 +78,9 @@ def test_date_picker(widgets_page):
     form = WidgetsPage(widgets_page)
     form.click_date_picker()
     return widgets_page
+
+@pytest.fixture
+def test_slider(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_slider()
+    return widgets_page
