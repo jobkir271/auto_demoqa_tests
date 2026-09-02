@@ -12,5 +12,5 @@ class MainPage(BasePage):
         self.page.get_by_role('link', name="Elements").click()
 
     def click_widgets(self):
-        self.page.get_by_role('link', name = "Widgets").click()
+        self.page.get_by_role('link', name = "widgets").click()
 

@@ -1,7 +1,7 @@
 import allure
 
 from playwright.sync_api import Page,expect
-from pages.Widgets.auto_complete_page import AutoCompletePage
+from pages.widgets.auto_complete_page import AutoCompletePage
 
 @allure.epic("demoqa_tests")
 @allure.feature("widgets")

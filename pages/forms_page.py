@@ -35,3 +35,5 @@ class WidgetsPage(BasePage):
         self.page.get_by_role('link', name = "Accordian").click()
     def click_auto_complete(self):
         self.page.get_by_role('link', name = "Auto Complete").click()
+    def click_date_picker(self):
+        self.page.get_by_role('link', name = "Date Picker").click()
