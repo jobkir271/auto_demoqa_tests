@@ -33,3 +33,5 @@ class Elements(BasePage):
 class WidgetsPage(BasePage):
     def click_accordian(self):
         self.page.get_by_role('link', name = "Accordian").click()
+    def click_auto_complete(self):
+        self.page.get_by_role('link', name = "Auto Complete").click()

@@ -67,5 +67,10 @@ def test_accordian(widgets_page):
     form.click_accordian()
     return widgets_page
 
+@pytest.fixture
+def test_auto_complete(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_auto_complete()
+    return widgets_page
 
 
