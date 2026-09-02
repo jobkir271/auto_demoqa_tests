@@ -1,59 +1,71 @@
 import pytest
 from pages.main_page import MainPage
-from pages.forms_page import AlertsFrameAndWindows
-from pages.forms_page import Elements
+from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage
+
 
 @pytest.fixture
-def browser_windows_page(page):
+def afw_page(page):
     main = MainPage(page)
     main.open("https://demoqa.com/")
     main.click_alerts_frame_and_windows()
-    form = AlertsFrameAndWindows(page)
+    return page
+
+@pytest.fixture
+def elements_page(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_elements()
+    return page
+
+@pytest.fixture
+def widgets_page(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_widgets()
+    return page
+
+@pytest.fixture
+def browser_windows_page(afw_page):
+    form = AlertsFrameAndWindows(afw_page)
     form.click_browser_windows()
-    return page
-@pytest.fixture
+    return afw_page
 
-def test_web_tables(page):
-    main = MainPage(page)
-    main.open("https://demoqa.com/")
-    main.click_elements()
-    forms = Elements(page)
-    forms.click_web_tables()
-    page.wait_for_selector("table tbody tr", state="visible")
-    return page
 @pytest.fixture
-def test_links(page):
-    main = MainPage(page)
-    main.open("https://demoqa.com/")
-    main.click_elements()
-    form = Elements(page)
+def test_web_tables(elements_page):
+    form = Elements(elements_page)
+    form.click_web_tables()
+    elements_page.wait_for_selector("table tbody tr", state="visible")
+    return elements_page
+
+@pytest.fixture
+def test_links(elements_page):
+    form = Elements(elements_page)
     form.click_links()
-    return page
-
+    return elements_page
 
 @pytest.fixture
-def test_broken(page):
-    main = MainPage(page)
-    main.open("https://demoqa.com/")
-    main.click_elements()
-    form = Elements(page)
+def test_broken(elements_page):
+    form = Elements(elements_page)
     form.click_broken()
-    return page
+    return elements_page
 
 @pytest.fixture
-def test_download_fix(page):
-    main = MainPage(page)
-    main.open("https://demoqa.com/")
-    main.click_elements()
-    form = Elements(page)
+def test_download_fix(elements_page):
+    form = Elements(elements_page)
     form.click_download()
-    return page
+    return elements_page
 
 @pytest.fixture
-def test_dynamic(page):
-    main = MainPage(page)
-    main.open("https://demoqa.com/")
-    main.click_elements()
-    form = Elements(page)
+def test_dynamic(elements_page):
+    form = Elements(elements_page)
     form.click_dynamic()
-    return page
+    return elements_page
+
+@pytest.fixture
+def test_accordian(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_accordian()
+    return widgets_page
+
+
+

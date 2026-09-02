@@ -30,3 +30,6 @@ class Elements(BasePage):
     def click_dynamic(self):
         self.page.get_by_role('link', name = "Dynamic Properties").click()
 
+class WidgetsPage(BasePage):
+    def click_accordian(self):
+        self.page.get_by_role('link', name = "Accordian").click()
