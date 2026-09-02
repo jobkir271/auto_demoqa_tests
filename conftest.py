@@ -84,3 +84,9 @@ def test_slider(widgets_page):
     form = WidgetsPage(widgets_page)
     form.click_slider()
     return widgets_page
+
+@pytest.fixture
+def test_progress_bar(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_progress_bar()
+    return widgets_page

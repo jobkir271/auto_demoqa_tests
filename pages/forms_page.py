@@ -39,3 +39,5 @@ class WidgetsPage(BasePage):
         self.page.get_by_role('link', name = "Date Picker").click()
     def click_slider(self):
         self.page.get_by_role('link', name = "Slider").click()
+    def click_progress_bar(self):
+        self.page.get_by_role('link', name = "Progress Bar").click()
