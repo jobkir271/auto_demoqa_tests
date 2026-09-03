@@ -41,3 +41,5 @@ class WidgetsPage(BasePage):
         self.page.get_by_role('link', name = "Slider").click()
     def click_progress_bar(self):
         self.page.get_by_role('link', name = "Progress Bar").click()
+    def click_tabs(self):
+        self.page.get_by_role('link', name = "Tabs").click()

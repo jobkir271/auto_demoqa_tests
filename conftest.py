@@ -90,3 +90,9 @@ def test_progress_bar(widgets_page):
     form = WidgetsPage(widgets_page)
     form.click_progress_bar()
     return widgets_page
+
+@pytest.fixture
+def test_tab(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_tabs()
+    return widgets_page
