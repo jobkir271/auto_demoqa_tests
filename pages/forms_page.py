@@ -45,3 +45,5 @@ class WidgetsPage(BasePage):
         self.page.get_by_role('link', name = "Tabs").click()
     def click_tool_tips(self):
         self.page.get_by_role('link', name = "Tool Tips").click()
+    def click_menu(self):
+        self.page.get_by_role('link', name = "Menu", exact=True).click()
