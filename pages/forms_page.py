@@ -43,3 +43,5 @@ class WidgetsPage(BasePage):
         self.page.get_by_role('link', name = "Progress Bar").click()
     def click_tabs(self):
         self.page.get_by_role('link', name = "Tabs").click()
+    def click_tool_tips(self):
+        self.page.get_by_role('link', name = "Tool Tips").click()

@@ -96,3 +96,9 @@ def test_tab(widgets_page):
     form = WidgetsPage(widgets_page)
     form.click_tabs()
     return widgets_page
+
+@pytest.fixture
+def test_tool_tips(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_tool_tips()
+    return widgets_page
