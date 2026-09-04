@@ -108,3 +108,9 @@ def test_menu(widgets_page):
     form = WidgetsPage(widgets_page)
     form.click_menu()
     return widgets_page
+
+@pytest.fixture
+def test_menu_select(widgets_page):
+    form = WidgetsPage(widgets_page)
+    form.click_select_menu()
+    return widgets_page
