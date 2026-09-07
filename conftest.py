@@ -1,6 +1,6 @@
 import pytest
 from pages.main_page import MainPage
-from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage
+from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage, InteractionsPage
 
 
 @pytest.fixture
@@ -22,6 +22,20 @@ def widgets_page(page):
     main = MainPage(page)
     main.open("https://demoqa.com/")
     main.click_widgets()
+    return page
+
+@pytest.fixture
+def interactions_page(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_interactions()
+    return page
+
+@pytest.fixture
+def bsa_page(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_book_store_application()
     return page
 
 @pytest.fixture
@@ -114,3 +128,9 @@ def test_menu_select(widgets_page):
     form = WidgetsPage(widgets_page)
     form.click_select_menu()
     return widgets_page
+
+@pytest.fixture
+def test_sortable(interactions_page):
+    form = InteractionsPage(interactions_page)
+    form.click_sortable()
+    return interactions_page

@@ -49,3 +49,25 @@ class WidgetsPage(BasePage):
         self.page.get_by_role('link', name = "Menu", exact=True).click()
     def click_select_menu(self):
         self.page.get_by_role('link', name = "Select Menu", exact=True).click()
+
+class InteractionsPage(BasePage):
+    def click_sortable(self):
+        self.page.get_by_role('link', name = "Sortable").click()
+    def click_selectable(self):
+        self.page.get_by_role('link', name = "Sortable").click()
+    def click_resizable(self):
+        self.page.get_by_role('link', name = "Resizable").click()
+    def click_droppable(self):
+        self.page.get_by_role('link', name = "Droppable").click()
+    def click_dragabble(self):
+        self.page.get_by_role('link', name = "Dragabble").click()
+
+class BookStoreApplicationPage(BasePage):
+    def click_login(self):
+        self.page.get_by_role('link', name="Login").click()
+    def click_book_store(self):
+        self.page.get_by_role('link', name="Book Store").click()
+    def click_profile(self):
+        self.page.get_by_role('link', name="Profile").click()
+    def click_book_store_api(self):
+        self.page.get_by_role('link', name="Book Store API").click()

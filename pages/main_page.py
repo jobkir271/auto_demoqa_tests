@@ -14,3 +14,8 @@ class MainPage(BasePage):
     def click_widgets(self):
         self.page.get_by_role('link', name = "widgets").click()
 
+    def click_interactions(self):
+        self.page.get_by_role('link', name = "Interactions").click()
+
+    def click_book_store_application(self):
+        self.page.get_by_role('link', name = "Book store application").click()
