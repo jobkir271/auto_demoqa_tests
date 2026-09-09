@@ -152,3 +152,9 @@ def test_droppable(interactions_page):
     form = InteractionsPage(interactions_page)
     form.click_droppable()
     return interactions_page
+
+@pytest.fixture
+def test_dragabble(interactions_page):
+    form = InteractionsPage(interactions_page)
+    form.click_dragabble()
+    return interactions_page
