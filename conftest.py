@@ -146,3 +146,9 @@ def test_resizable(interactions_page):
     form = InteractionsPage(interactions_page)
     form.click_resizable()
     return interactions_page
+
+@pytest.fixture
+def test_droppable(interactions_page):
+    form = InteractionsPage(interactions_page)
+    form.click_droppable()
+    return interactions_page
