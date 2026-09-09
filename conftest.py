@@ -134,3 +134,9 @@ def test_sortable(interactions_page):
     form = InteractionsPage(interactions_page)
     form.click_sortable()
     return interactions_page
+
+@pytest.fixture
+def test_selectable(interactions_page):
+    form = InteractionsPage(interactions_page)
+    form.click_selectable()
+    return interactions_page

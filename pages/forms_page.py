@@ -54,7 +54,7 @@ class InteractionsPage(BasePage):
     def click_sortable(self):
         self.page.get_by_role('link', name = "Sortable").click()
     def click_selectable(self):
-        self.page.get_by_role('link', name = "Sortable").click()
+        self.page.get_by_role('link', name = "Selectable").click()
     def click_resizable(self):
         self.page.get_by_role('link', name = "Resizable").click()
     def click_droppable(self):
