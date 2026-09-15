@@ -15,7 +15,7 @@ def test_add_book_to_profile(logged_in_page: Page):
 
     store.open_book_store()
     store.search_book("You")
-    store.open_first_book()
+    store.open_book("You Don't Know JS")
     store.add_to_collection()
 
     profile.verify_book_in_profile("You")

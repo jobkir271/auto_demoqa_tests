@@ -16,6 +16,7 @@ class BookStorePage(BasePage):
     @allure.step("Search for book: '{title}'")
     def search_book(self, title: str):
         self.page.locator("#searchBox").fill(title)
+        self.page.wait_for_timeout(3000)
 
     @allure.step("Verify results contain '{title}'")
     def verify_results_contain(self, title: str):

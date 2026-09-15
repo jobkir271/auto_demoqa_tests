@@ -11,9 +11,9 @@ class BookStorePage(BasePage):
     def search_book(self,title):
         self.page.locator("#searchBox").fill(title)
 
-    @allure.step("Open first book in results")
-    def open_first_book(self):
-        self.page.locator(".action-buttons a").first.click()
+    @allure.step("Open book '{title}'")
+    def open_book(self, title: str):
+        self.page.get_by_role("link", name=title).click()
 
     @allure.step("Add book to collection and go to Profile")
     def add_to_collection(self):
@@ -27,7 +27,7 @@ class ProfilePage(BasePage):
     @allure.step("Verify book '{title}' is in profile")
     def verify_book_in_profile(self, title: str):
         self.page.wait_for_timeout(5000)
-        expect(self.page.locator("table tbody tr")).to_contain_text(title)
+        expect(self.page.locator("table tbody")).to_contain_text(title)
 
     @allure.step("Delete book with ISBN: {isbn}")
     def delete_book(self, isbn: str):
