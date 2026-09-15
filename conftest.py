@@ -1,6 +1,7 @@
 import pytest
 from pages.main_page import MainPage
-from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage, InteractionsPage
+from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage, InteractionsPage, BookStoreApplicationPage
+from playwright.sync_api import expect
 
 
 @pytest.fixture
@@ -158,3 +159,18 @@ def test_dragabble(interactions_page):
     form = InteractionsPage(interactions_page)
     form.click_dragabble()
     return interactions_page
+
+@pytest.fixture
+def test_login(bsa_page):
+    form = BookStoreApplicationPage(bsa_page)
+    form.click_login()
+    return bsa_page
+
+@pytest.fixture
+def logged_in_page(page):
+    page.goto("https://demoqa.com/login")
+    page.get_by_placeholder("UserName").fill("Ara271")
+    page.get_by_placeholder("Password").fill("889134509963Zx*")
+    page.get_by_role("button", name="Login").click()
+    expect(page.get_by_role("button", name="Logout")).to_be_visible()
+    return page
