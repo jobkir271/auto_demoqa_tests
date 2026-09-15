@@ -13,7 +13,7 @@ class BookStorePage(BasePage):
 
     @allure.step("Open first book in results")
     def open_first_book(self):
-        self.page.locator(".action-buttons a").click()
+        self.page.locator(".action-buttons a").first.click()
 
     @allure.step("Add book to collection and go to Profile")
     def add_to_collection(self):

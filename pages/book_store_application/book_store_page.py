@@ -19,4 +19,4 @@ class BookStorePage(BasePage):
 
     @allure.step("Verify results contain '{title}'")
     def verify_results_contain(self, title: str):
-        expect(self.page.locator("table tbody tr")).to_contain_text(title)
+        expect(self.page.locator("table tbody")).to_contain_text(title)

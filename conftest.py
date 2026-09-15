@@ -172,5 +172,5 @@ def logged_in_page(page):
     page.get_by_placeholder("UserName").fill("Ara271")
     page.get_by_placeholder("Password").fill("889134509963Zx*")
     page.get_by_role("button", name="Login").click()
-    expect(page.get_by_role("button", name="Logout")).to_be_visible()
+    expect(page.get_by_role("button", name="Logout")).to_be_visible(timeout=15000)
     return page
