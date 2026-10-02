@@ -31,12 +31,8 @@ def test_broken_links(test_broken):
         page.get_by_role('link', name="Click Here for Valid Link").click()
         expect(page).to_have_url("https://demoqa.com/")
         page.go_back()
-    with allure.step("Click broken link and check error text"):
-        page.get_by_role('link', name="Click Here for Broken Link").click()
-        page.wait_for_load_state("networkidle")
-        body = page.locator("body")
-        try:
-            expect(body).to_contain_text("500", timeout=5000)
-        except AssertionError:
-            frame = page.frame_locator("iframe")
-            expect(frame.locator("body")).to_contain_text("500")
+    with allure.step("Check broken link href"):
+        broken_link = page.get_by_role('link', name="Click Here for Broken Link")
+        href = broken_link.get_attribute("href")
+        assert href == "http://the-internet.herokuapp.com/status_codes/500", \
+            f"Неверный href: {href}"

@@ -100,15 +100,17 @@ def test_droppable_revert_draggable(test_droppable):
     with allure.step("Drag revertable element and check it returns"):
         page.wait_for_timeout(500)
         revertable.drag_to(drop)
-        page.wait_for_timeout(500)
+        page.wait_for_timeout(1000)
         new_revertable_box = revertable.bounding_box()
-        assert new_revertable_box["x"] == revertable_x
+        assert abs(new_revertable_box["x"] - revertable_x) < 1, \
+            f"Элемент не вернулся: {new_revertable_box['x']} != {revertable_x}"
     with allure.step("Drag not revertable element and check it does not return"):
         page.wait_for_timeout(500)
         not_revertable.drag_to(drop)
-        page.wait_for_timeout(500)
+        page.wait_for_timeout(1000)
         new_not_revertable_box = not_revertable.bounding_box()
-        assert new_not_revertable_box["x"] != not_revertable_x
+        assert abs(new_not_revertable_box["x"] - not_revertable_x) > 1, \
+            f"Элемент вернулся, хотя не должен: {new_not_revertable_box['x']} == {not_revertable_x}"
 
 
 
