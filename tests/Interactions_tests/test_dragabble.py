@@ -24,6 +24,7 @@ def test_dragabble_simple(test_dragabble):
         new_box = drag.bounding_box()
         assert new_box["x"] != box["x"]
 
+
 @allure.epic("demoqa_tests")
 @allure.feature("dragabble")
 @allure.story("checking axis restricted X")
@@ -32,8 +33,14 @@ def test_dragabble_axis_x(test_dragabble):
     page = test_dragabble
     with allure.step("Switch to Axis Restricted tab"):
         page.get_by_role("tab", name="Axis Restricted").click()
+        page.wait_for_timeout(1000)
+        page.evaluate("window.scrollTo(0, 0)")
+        page.wait_for_timeout(500)
     with allure.step("Get X-restricted element"):
         drag = page.locator("#restrictedX")
+        drag.scroll_into_view_if_needed()
+        drag.wait_for(state="visible")
+        page.wait_for_timeout(500)
         box = drag.bounding_box()
     if box is not None:
         with allure.step("Drag element horizontally"):
@@ -49,6 +56,7 @@ def test_dragabble_axis_x(test_dragabble):
             assert new_box["x"] != box["x"]
             assert new_box["y"] == box["y"]
 
+
 @allure.epic("demoqa_tests")
 @allure.feature("dragabble")
 @allure.story("checking axis restricted Y")
@@ -57,8 +65,14 @@ def test_dragabble_axis_y(test_dragabble):
     page = test_dragabble
     with allure.step("Switch to Axis Restricted tab"):
         page.get_by_role("tab", name="Axis Restricted").click()
+        page.wait_for_timeout(1000)
+        page.evaluate("window.scrollTo(0, 0)")
+        page.wait_for_timeout(500)
     with allure.step("Get Y-restricted element"):
         drag = page.locator("#restrictedY")
+        drag.scroll_into_view_if_needed()
+        drag.wait_for(state="visible")
+        page.wait_for_timeout(500)
         box = drag.bounding_box()
     if box is not None:
         with allure.step("Drag element vertically"):
@@ -74,6 +88,7 @@ def test_dragabble_axis_y(test_dragabble):
             assert new_box["y"] != box["y"]
             assert new_box["x"] == box["x"]
 
+
 @allure.epic("demoqa_tests")
 @allure.feature("dragabble")
 @allure.story("checking container restricted within box")
@@ -82,8 +97,14 @@ def test_container_restricted_box(test_dragabble):
     page = test_dragabble
     with allure.step("Switch to Container Restricted tab"):
         page.get_by_role("tab", name="Container Restricted").click()
+        page.wait_for_timeout(1000)
+        page.evaluate("window.scrollTo(0, 0)")
+        page.wait_for_timeout(500)
     with allure.step("Get element and drag beyond limits"):
         drag = page.locator("#containmentWrapper .draggable.ui-widget-content")
+        drag.scroll_into_view_if_needed()
+        drag.wait_for(state="visible")
+        page.wait_for_timeout(500)
         box = drag.bounding_box()
         drag.hover()
         page.mouse.down()
@@ -94,6 +115,7 @@ def test_container_restricted_box(test_dragabble):
         assert new_box["x"] >= box["x"]
         assert new_box["y"] != box["y"]
 
+
 @allure.epic("demoqa_tests")
 @allure.feature("dragabble")
 @allure.story("checking container restricted within parent")
@@ -102,8 +124,14 @@ def test_container_restricted_parent(test_dragabble):
     page = test_dragabble
     with allure.step("Switch to Container Restricted tab"):
         page.get_by_role("tab", name="Container Restricted").click()
+        page.wait_for_timeout(1000)
+        page.evaluate("window.scrollTo(0, 0)")
+        page.wait_for_timeout(500)
     with allure.step("Get element and drag it"):
         drag = page.locator('.draggable.ui-widget-content.m-3 .ui-widget-header ')
+        drag.scroll_into_view_if_needed()
+        drag.wait_for(state="visible")
+        page.wait_for_timeout(500)
         box = drag.bounding_box()
         drag.hover()
         page.mouse.down()
@@ -114,6 +142,7 @@ def test_container_restricted_parent(test_dragabble):
         assert new_box["x"] >= box["x"]
         assert new_box["y"] >= box["y"]
 
+
 @allure.epic("demoqa_tests")
 @allure.feature("dragabble")
 @allure.story("checking cursor style")
@@ -122,10 +151,18 @@ def test_cursor_style(test_dragabble):
     page = test_dragabble
     with allure.step("Switch to Cursor Style tab"):
         page.get_by_role("tab", name="Cursor Style").click()
+        page.wait_for_timeout(1000)
+        page.evaluate("window.scrollTo(0, 0)")
+        page.wait_for_timeout(500)
     with allure.step("Get all draggable elements"):
         drag_center = page.locator('#cursorCenter')
         drag_top_left = page.locator('#cursorTopLeft')
         drag_bottom = page.locator('#cursorBottom')
+        drag_center.scroll_into_view_if_needed()
+        drag_center.wait_for(state="visible")
+        drag_top_left.wait_for(state="visible")
+        drag_bottom.wait_for(state="visible")
+        page.wait_for_timeout(500)
         box_center = drag_center.bounding_box()
         box_top_left = drag_top_left.bounding_box()
         box_bottom = drag_bottom.bounding_box()
