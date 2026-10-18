@@ -6,7 +6,7 @@ BASE_URL = "https://demoqa.com"
 @allure.epic("demoqa_tests")
 @allure.feature("book_store_api")
 @allure.story("checking get all books")
-@allure.severity(allure.severity_level.NORMAL)
+@allure.severity(allure.severity_level.CRITICAL)
 def test_get_all_books():
     with allure.step("Send GET request to /BookStore/v1/Books"):
         response = requests.get(f"{BASE_URL}/BookStore/v1/Books")

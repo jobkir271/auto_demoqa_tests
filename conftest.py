@@ -1,6 +1,8 @@
 import pytest
+
+from pages.alerts_frames_windows.browser_windows_page import BrowserWindowsPage
 from pages.main_page import MainPage
-from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage, InteractionsPage, BookStoreApplicationPage
+from pages.forms_page import AlertsFrameAndWindows, Elements, WidgetsPage, InteractionsPage, BookStoreApplicationPage, FormsPage
 from playwright.sync_api import expect
 
 
@@ -167,6 +169,18 @@ def test_login(bsa_page):
     return bsa_page
 
 @pytest.fixture
+def test_checkbox_tree(elements_page):
+    form = Elements(elements_page)
+    form.click_check_box()
+    return elements_page
+
+@pytest.fixture
+def test_buttons(elements_page):
+    form = Elements(elements_page)
+    form.click_buttons()
+    return elements_page
+
+@pytest.fixture
 def logged_in_page(page):
     page.goto("https://demoqa.com/login")
     page.get_by_placeholder("UserName").fill("Ara271")
@@ -174,3 +188,37 @@ def logged_in_page(page):
     page.get_by_role("button", name="Login").click()
     expect(page.get_by_role("button", name="Logout")).to_be_visible(timeout=15000)
     return page
+
+@pytest.fixture
+def test_practice_form(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_forms()
+    forms = FormsPage(page)
+    forms.click_practice_form()
+    return page
+
+@pytest.fixture
+def test_check_box(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_elements()
+    form = Elements(page)
+    form.click_text_box()
+    return page
+
+@pytest.fixture
+def test_radio_button(page):
+    main = MainPage(page)
+    main.open("https://demoqa.com/")
+    main.click_elements()
+    form = Elements(page)
+    form.click_radio_button()
+    return page
+
+@pytest.fixture
+def test_alerts(afw_page):
+    form = AlertsFrameAndWindows(afw_page)
+    form.click_alerts()
+    return afw_page
+

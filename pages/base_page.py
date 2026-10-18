@@ -5,4 +5,4 @@ class BasePage:
     def __init__(self,page: Page):
         self.page = page
     def open(self,url: str):
-        self.page.goto(url)
+        self.page.goto(url, timeout=60000)

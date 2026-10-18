@@ -1,8 +1,8 @@
 import allure
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
-from pages.book_store_application.profile_page import BookStorePage, ProfilePage
-
+from pages.book_store_application.book_store_page import BookStorePage
+from pages.book_store_application.profile_page import ProfilePage
 
 @allure.epic("demoqa_tests")
 @allure.feature("book_store")

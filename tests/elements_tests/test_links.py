@@ -1,17 +1,17 @@
 import pytest
 import allure
+from pages.elements.link_page import LinksPage
 
-from playwright.sync_api import Page,expect
 
-@pytest.mark.parametrize("tab_link", ["#simpleLink","#dynamicLink"])
-def test_home_link_new_tab(test_links ,tab_link):
-    with allure.step(f"Click link {tab_link} and switch to new tab"):
-        page = test_links
-        with page.context.expect_page() as new_page_info:
-            page.locator(tab_link).click()
-        new_page = new_page_info.value
-    with allure.step("Check that new tab URL is correct"):
-        expect(new_page).to_have_url("https://demoqa.com/")
+@pytest.mark.parametrize("tab_link", ["#simpleLink", "#dynamicLink"])
+@allure.epic("demoqa_tests")
+@allure.feature("links")
+@allure.story("Checking new tab")
+@allure.severity(allure.severity_level.NORMAL)
+def test_home_link_new_tab(test_links, tab_link):
+    links = LinksPage(test_links)
+    links.click_and_check_new_tab(tab_link)
+
 
 @pytest.mark.parametrize("link_text, expected_code", [
     ("Created", 201),
@@ -22,9 +22,10 @@ def test_home_link_new_tab(test_links ,tab_link):
     ("Forbidden", 403),
     ("Not Found", 404),
 ])
-def test_api_links(test_links,link_text,expected_code):
-    with allure.step(f"Click link {link_text}"):
-        page = test_links
-        page.get_by_role("link", name=link_text).click()
-    with allure.step(f"Check that response contains status {expected_code}"):
-        expect(page.locator("#linkResponse")).to_contain_text(str(expected_code))
+@allure.epic("demoqa_tests")
+@allure.feature("links")
+@allure.story("Checking API links")
+@allure.severity(allure.severity_level.NORMAL)
+def test_api_links(test_links, link_text, expected_code):
+    links = LinksPage(test_links)
+    links.click_and_check_api_link(link_text, expected_code)

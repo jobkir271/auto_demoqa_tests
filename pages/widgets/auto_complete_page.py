@@ -1,22 +1,32 @@
-from pages.base_page import BasePage
+import allure
+from playwright.sync_api import Page, expect
 
-class AutoCompletePage(BasePage):
 
-    MULTIPLE_INPUT = "#autoCompleteMultipleInput"
-    SINGLE_INPUT = "#autoCompleteSingleInput"
-    MULTI_VALUE_LABEL = ".auto-complete__multi-value__label.css-9jq23d"
-    SINGLE_VALUE = ".auto-complete__single-value.css-1dimb5e-singleValue"
+class AutoCompletePage:
+    def __init__(self, page: Page):
+        self.page = page
+        self.multiple_input = page.locator("#autoCompleteMultipleInput")
+        self.single_input = page.locator("#autoCompleteSingleInput")
+        self.multi_value_label = page.locator(".auto-complete__multi-value__label.css-9jq23d")
+        self.single_value = page.locator(".auto-complete__single-value.css-1dimb5e-singleValue")
 
-    def select_multiple_color(self, color: str):
-        self.page.locator(self.MULTIPLE_INPUT).fill(color)
-        self.page.get_by_text(color, exact = True).click()
+    @allure.step("Select Red and Green (multiple)")
+    def select_red_and_green(self):
+        self.multiple_input.fill("Red")
+        self.page.get_by_text("Red", exact=True).click()
+        self.multiple_input.fill("Green")
+        self.page.get_by_text("Green", exact=True).click()
 
-    def select_single_color(self, color: str):
-        self.page.locator(self.SINGLE_INPUT).fill(color)
-        self.page.get_by_text(color, exact = True).click()
+    @allure.step("Verify multiple colors")
+    def check_multiple_colors(self):
+        expect(self.multi_value_label.nth(0)).to_have_text("Red")
+        expect(self.multi_value_label.nth(1)).to_have_text("Green")
 
-    def get_multiple_tags(self):
-        return self.page.locator(self.MULTI_VALUE_LABEL)
+    @allure.step("Select Purple (single)")
+    def select_purple(self):
+        self.single_input.fill("Purple")
+        self.page.get_by_text("Purple", exact=True).click()
 
-    def get_single_tag(self):
-        return self.page.locator(self.SINGLE_VALUE)
+    @allure.step("Verify single color")
+    def check_single_color(self):
+        expect(self.single_value).to_have_text("Purple")

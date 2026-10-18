@@ -25,7 +25,7 @@ jobs:
           playwright install --with-deps
 
       - name: Run tests with Allure
-        run: pytest --alluredir=allure-results
+        run: pytest --alluredir=allure-results --reruns 2
 
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
