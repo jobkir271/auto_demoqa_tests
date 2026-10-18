@@ -1,7 +1,8 @@
 import allure
-
+import pytest
 from pages.widgets.accordian_page import AccordianPage
 
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("widgets")
 @allure.story("Checking accordian")

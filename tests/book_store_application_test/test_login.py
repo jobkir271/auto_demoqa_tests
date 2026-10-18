@@ -1,6 +1,8 @@
 import allure
+import pytest
 from playwright.sync_api import Page,expect
 
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("book_store")
 @allure.story("checking login")

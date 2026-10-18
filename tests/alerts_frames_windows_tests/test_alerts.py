@@ -2,7 +2,7 @@ import allure
 import pytest
 from pages.alerts_frames_windows.alerts_page import AlertsPage
 
-
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("alert,confirm,prompt")
 @allure.story("Catching alerts")

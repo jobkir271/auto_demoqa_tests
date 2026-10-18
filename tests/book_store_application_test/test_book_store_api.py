@@ -1,8 +1,9 @@
 import allure
 import requests
+import pytest
 
 BASE_URL = "https://demoqa.com"
-
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("book_store_api")
 @allure.story("checking get all books")
@@ -16,7 +17,7 @@ def test_get_all_books():
         data = response.json()
         assert len(data["books"]) > 0
         print(f"Книг в магазине:{len(data['books'])}")
-
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("book_store_api")
 @allure.story("checking get all books")

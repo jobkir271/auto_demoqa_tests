@@ -1,7 +1,8 @@
 import allure
+import pytest
 from pages.elements.buttons_page import ButtonsPage
 
-
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("buttons")
 @allure.story("Checking button presses")

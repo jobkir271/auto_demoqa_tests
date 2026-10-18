@@ -1,4 +1,5 @@
 import allure
+import pytest
 from pages.Interactions.droppable_page import DroppablePage
 
 
@@ -31,11 +32,11 @@ def test_droppable_not_accept(test_droppable):
     droppable.switch_to_accept()
     droppable.drag_not_acceptable()
 
-
+@pytest.mark.smoke
 @allure.epic("demoqa_tests")
 @allure.feature("droppable")
 @allure.story("checking prevent propagation")
-@allure.severity(allure.severitygo_level.NORMAL)
+@allure.severity(allure.severity_level.NORMAL)
 def test_droppable_prevent_propogation(test_droppable):
     droppable = DroppablePage(test_droppable)
     droppable.switch_to_prevent_propogation()

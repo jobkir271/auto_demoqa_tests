@@ -10,4 +10,4 @@ docker pull jobkir271/demoqa:latest
 docker run --rm jobkir271/demoqa:latest
 
 ## Параллельный запуск
-docker run --rm jobkir271/demoqa:latest pytest -v -n 4
+docker run --rm jobkir271/demoqa:latest pytest -v -n 4 --reruns 2

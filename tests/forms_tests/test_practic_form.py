@@ -2,7 +2,7 @@ import pytest
 import allure
 from pages.forms.practice_form_page import PracticeFormPage
 
-
+@pytest.mark.smoke
 @pytest.mark.parametrize(
     "form_data,expected_success",
     [
